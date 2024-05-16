@@ -36,3 +36,5 @@ Route::get('/test', function () {
 
     return 'Done';
 });
+
+Route::view('/alpine', 'alpine');

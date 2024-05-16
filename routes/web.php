@@ -17,7 +17,8 @@ Route::get('/jobs/{job}', [JobController::class, 'show']);
 
 Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])
     ->middleware('auth')
-    ->can('edit', 'job');
+    ->can('edit', 'job')
+;
 
 Route::patch('/jobs/{job}', [JobController::class, 'update']);
 Route::delete('/jobs/{job}', [JobController::class, 'destroy']);
@@ -30,7 +31,6 @@ Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
 
 Route::get('/test', function () {
-
     $job = Job::first();
     TranslateJob::dispatch($job);
 
@@ -38,3 +38,10 @@ Route::get('/test', function () {
 });
 
 Route::view('/alpine', 'alpine');
+
+Route::view('/alpine-learning', 'alpine-learning');
+Route::view('/alpine-learning1', 'alpine-learning1');
+Route::view('/alpine-learning2', 'alpine-learning2');
+Route::view('/alpine-learning3', 'alpine-learning3');
+Route::view('/alpine-learning4', 'alpine-learning4');
+Route::view('/alpine-learning5', 'alpine-learning5');
